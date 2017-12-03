@@ -1,0 +1,154 @@
+
+/*Top is executed first so if you want to change an element with media query you need to put it on top before the media query delclaration */
+div.calender-section{
+	margin-top: 60px;
+	margin-left: 20px;
+	height: 50%;
+	width: 70%; 
+}
+
+
+h1{
+	font-size: 2em;
+	margin-top: 90px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+				div.calender-section{
+
+					width:100%;
+					margin-left: 0px;
+
+				}
+				html{
+                    overflow: hidden; 
+                }
+
+
+
+                
+                
+            }  
+
+@media screen and (max-width: 640px) {
+	h1{
+		margin-top: 70px;
+
+	}
+
+
+
+}
+
+
+
+li.calender-element {
+	/*width: 100px;
+ 	height: 100px; */
+ 	/*display: block;*/
+ 	width: 14%;
+ 	height: 100%;
+ 	font-size: 24px;
+ 	
+
+ 	border-left: 1px solid black;
+ 	border-right: 1px solid black;
+ 	border-bottom: 1px solid black;
+ 	text-align: left;
+ 	text-indent: 4px;
+ 	float: left;
+ 	background-color: #EDC9AF;
+}
+
+
+
+
+
+img.calender-image{
+	display: block;
+	height: 100%;
+	width:100%;
+	/*margin: 0 auto;	 */ 
+}
+
+li a.calender-link:hover{
+	/*background-color: #F2F0F0; */
+}
+
+li a.calender-link{
+	display: block;
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+	/*padding: 4px;*/
+}
+p.calender-link{
+	position: absolute;
+	/*width: 100%;*/
+	/*height: 50%;*/
+	background-color: #EDC9AF;
+
+}
+
+li.calender-element + li.calender-element {
+    border-left: none;
+}
+
+li.calender-weekday + li.calender-weekday{
+	border-left: none;
+}
+li.calender-element:hover{
+	background-color: #F2F0F0;
+
+	
+
+}
+
+li.calender-weekday{
+	/*
+	width: 100px;
+	height: 20px; */
+	width: 14%;
+	height: 100%;
+	font-size: 24px;
+	/*margin-top: 50%;*/
+
+	border-left: 1px solid black;
+ 	border-right: 1px solid black;
+ 	border-bottom: 1px solid black;
+ 	border-top: 1px solid black;
+	text-align: center;
+	background-color: yellow;
+	float: left;
+}
+
+/* When using overflow hidden it creates a new block formatting context which forces
+  ul to contain its children increasing its height.  */
+
+ul.calender-row {
+	height: 18%;
+	width: 100%;
+	/*background: gray;*/
+
+/*	overflow:hidden; */
+	/*width: 700px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black; */
+}
+ul.calendarTopRow{
+	height: 10%;
+}
+
+ul.calender-row + ul.calender-row{
+	border-top: none;
+}
+
+div.calender-Innersection{
+	height: 100%;
+	width: 100%; 
+}
+
+
+

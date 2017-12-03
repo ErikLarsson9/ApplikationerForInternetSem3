@@ -1,0 +1,204 @@
+/*Top is executed first so if you want to change an element with media query you need to put it on top before the media query delclaration */
+
+ul.menu{
+        background-color: #CD853F; 
+        position: fixed;
+/*        position fixed gives height auto without position fix ul would collapse 
+          We can also use overflow hidden but it serves the same purpose and is unneccessary
+          it also breaks safari. */
+        top: 0;
+        width: 100%;
+    }
+
+
+
+
+
+
+body{
+    font-size: 24px;
+    font-family:Georgia;
+    font-style: italic;
+    height: 100%;
+    width:100%;
+    background-image:url("../images/brick.jpg");
+
+}
+html{
+    height:100%;
+    width:100%;
+}
+li.titles{
+    color: yellow;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 1.5em;
+    float: right;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1920px) {
+                body {
+                    /*background-color: red;*/
+                    font-size: 24px;
+                }
+}
+@media screen and (max-width: 1680px) {
+                body {
+                    /*background-color: orange;*/
+                    font-size: 24px;
+
+                }
+            }
+@media screen and (max-width: 1280px) {
+                body {
+                    /*background-color: yellow;*/
+                    font-size: 16px;
+                }
+            }
+@media screen and (max-width: 800px) {
+                body {
+
+                    /*background-color: green;*/
+                    font-size: 14px;
+
+                }
+
+            }           
+@media screen and (max-width: 640px) {
+                body {
+                    /*background-color: blue;*/
+                    margin-top: 70px;
+                    
+                }
+                
+            }
+
+@media screen and (max-width: 480px) {
+                body {
+                    /*background-color: indigo;*/
+
+                }
+               
+                
+            }
+
+@media screen and (max-width: 320px) {
+                body {
+                    /*background-color: violet;*/
+                    font-size: 5px;
+
+                }
+            }
+
+ul.menu{
+ 		background-color: #CD853F; 
+ 		position: fixed;
+/*        position fixed gives height auto without position fix ul would collapse 
+          We can also use overflow hidden but it serves the same purpose and is unneccessary
+          it also breaks safari. */
+        top: 0;
+ 		width: 100%;
+ 	}
+
+section{
+	margin-top: 50px;
+}
+
+.menu-list{
+    float: left;
+}
+h1{
+    color: white;
+    display: inline-block;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 36px;
+    background-color: #CD853F;
+    
+}
+
+h1.logout{
+    display: block;
+    margin-top: 0px;
+}
+h1.login{
+    margin-top: 0px;
+}
+
+
+
+li a.button, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;    
+}
+
+li a.button:hover, .dropdown:hover .dropbtn {
+    background-color: sienna;
+}
+
+
+/* If position is absolute (absolute/fixed) child (dropdown-content) is positioned relative its parent
+    if default static then parent will expand to contain child and the 
+    parent  will move elements that are right of it to the right as it expands in size */
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #CD853F;
+    min-width: 160px;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;    
+}
+
+.dropdown-content a:hover {background-color: sienna}
+
+.displayonhover:hover .dropdown-content {
+    display: block;
+}
+
+form{
+    /*background-color: #EDC9AF;*/
+}
+.displayblock{
+    display: block;
+}
+.continue{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 200px;
+    font-size: 2em;
+    background-color: #CD853F;
+
+}
+.loginButton{
+    float: left;
+    margin-top:20px;
+
+}
+.loginRegisterpara{
+    color: white;
+}
+.cancelButton{
+    float: right;
+    margin-right: 20px;
+    margin-top:20px;
+}
+input{
+    margin-left: 20px;
+}
+.formComment{
+    background-color: #d9e4f4;
+}
+
+
