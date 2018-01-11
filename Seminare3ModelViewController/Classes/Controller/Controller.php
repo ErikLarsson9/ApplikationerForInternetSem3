@@ -49,19 +49,19 @@ Class Controller{
     }
 
     public function getComments($recipe){
-        $recipe = $recipe."comments";
+        $recipe = $recipe."commentsold";
         $commentsFunction = new Model\CommentFunctions($this->sqlConnection);
         return $commentsFunction->getComments($recipe);
 
     }
     public function deleteComment($user, $commentId, $recipe){
-        $recipe = $recipe."comments";
+        $recipe = $recipe."commentsold";
         $commentsFunction = new Model\CommentFunctions($this->sqlConnection);
         return $commentsFunction->deleteComment($user, $commentId, $recipe);
 
     }
     public function addComment($user, $comment, $recipe){
-        $recipe = $recipe."comments";
+        $recipe = $recipe."commentsold";
         $commentsFunction = new Model\CommentFunctions($this->sqlConnection);
         return $commentsFunction->addComment($user, $comment, $recipe);
 
