@@ -1,5 +1,6 @@
 <?php
 namespace Model;
+use\SecurityUtility;
 Class UserFunctions{
     private $sqlConnection;
 
@@ -11,6 +12,9 @@ Class UserFunctions{
     }
 
     public function login($username, $userPassword){
+        if(!(SecurityUtility\Validator::validateUsername($username) &&  SecurityUtility\Validator::validatePassword($userPassword))){
+            return "Validation error";
+        }
 
         If(null !=$this->sqlConnection->checkConnection()){
             //Login unsuccessful
@@ -21,7 +25,9 @@ Class UserFunctions{
             if($userData = $this->sqlConnection->getUserData($username)){
                 //Check if successful login and if so set cookie
                 //if ($userData->username == $username && $userData->password == $userPassword) {
-                if ($userData->username == $username && password_verify ( $userPassword, $userData->password )) {
+
+//                if ($userData->username == $username && password_verify ( $userPassword, $userData->password )) {
+                    if ($userData["username"] == $username && password_verify ( $userPassword, $userData["password"])) {
 
                                     //Cookie lifetime is 30 min
                     $cookie_name = "user";
@@ -29,7 +35,8 @@ Class UserFunctions{
                     return "Logged in successfully!";
                 }
                 //If username entered is the same but different case
-                else if($userData->username != $username){
+//                else if($userData->username != $username){
+                else if($userData["username"] != $username){
 
                     return "Username doesn't exist!";
                 }
@@ -55,6 +62,11 @@ Class UserFunctions{
 
     }
     public function register($username, $password, $repeatPassword){
+        if(!(SecurityUtility\Validator::validateUsername($username) &&  SecurityUtility\Validator::validatePassword($password)
+            &&  SecurityUtility\Validator::validatePassword($repeatPassword)
+        )){
+            return "Validation error";
+        }
 
         If(null !=$this->sqlConnection->checkConnection()){
             //Registration unsuccessful

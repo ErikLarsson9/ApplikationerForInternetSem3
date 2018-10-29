@@ -13,6 +13,7 @@
     <?php
         echo "<h1>".$message."</h1>";
         echo "<a class='continue' href=\"".$previousPage."\">Continue</a>";
+        //echo $_SERVER['REQUEST_URI'];
     ?>
 
 </body>

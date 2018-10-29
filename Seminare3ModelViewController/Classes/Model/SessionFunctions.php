@@ -1,5 +1,6 @@
 <?php
 namespace Model;
+use\SecurityUtility;
 Class SessionFunctions{
     public function __construct()
     {
@@ -14,8 +15,13 @@ Class SessionFunctions{
 
     }
     public function setPreviousPage(){
-
-        $_SESSION['previousPage'] = $_SERVER['REQUEST_URI'];
+        if(!SecurityUtility\Validator::validateURI($_SERVER['REQUEST_URI'])){
+            $_SESSION['previousPage'] =  "/~Likecoke/Seminare3ModelViewController/index.php";
+        }
+        else{
+            $_SESSION['previousPage'] = $_SERVER['REQUEST_URI'];
+        }
+        //echo $_SESSION['previousPage'];
 
     }
 

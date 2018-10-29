@@ -1,5 +1,6 @@
 <?php
 namespace Model;
+use\SecurityUtility;
 Class CommentFunctions{
     private $sqlConnection;
 
@@ -11,11 +12,21 @@ Class CommentFunctions{
     }
 
     public function getComments($recipe){
+        if(!SecurityUtility\Validator::validateRecipe($recipe)){
+            return "Validation error";
+        }
 
         return $this->sqlConnection->getComments($recipe);
     }
 
     public function deleteComment($user, $commentId, $recipe){
+        if(false === (SecurityUtility\Validator::validateUsername($user)
+                && SecurityUtility\Validator::validateInt($commentId) &&
+                SecurityUtility\Validator::validateRecipe($recipe))){
+
+            return "Validation error";
+
+        }
         If(null !=$this->sqlConnection->checkConnection()){
 
             return "Couldn't Connect to database!";
@@ -34,6 +45,13 @@ Class CommentFunctions{
 
     }
     public function addComment($user, $comment, $recipe){
+        if(false === (SecurityUtility\Validator::validateUsername($user)
+                && SecurityUtility\Validator::validateComment($comment) &&
+                SecurityUtility\Validator::validateRecipe($recipe))){
+
+            return "Validation error";
+
+        }
 
         If(null !=$this->sqlConnection->checkConnection()){
 
