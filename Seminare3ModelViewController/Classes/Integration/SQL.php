@@ -6,10 +6,6 @@ namespace Integration{
     use\SecurityUtility;
 //include('/Users/Likecoke/ACCESSME/SQLLogin.php');
 Class SQL{
-//    private $server = 'localhost';
-//    private $mySQLUsername = 'php';
-//    private $mySQLPassword = 'pa$$W00RD';
-//    private $database = 'sem2login';
     private $server;
     private $mySQLUsername;
     private $mySQLPassword;
